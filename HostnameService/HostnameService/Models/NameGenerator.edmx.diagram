@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e27d02e0cfb4afb9e01bc2ccbd5d08f" Name="Diagram1">
+        <EntityTypeShape EntityType="NameGeneratorModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Location" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Name" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.NightWatch" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Platformm" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Project" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.QueryLog" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Rolee" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.SQLDeployment" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.sysdiagram" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.SystemAdmin" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.Typee" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NameGeneratorModel.User" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="NameGeneratorModel.FK__Name__LocationID__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="NameGeneratorModel.FK__Name__PlatformID__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="NameGeneratorModel.FK__Name__ProjectID__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="NameGeneratorModel.FK__Name__RoleID__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="NameGeneratorModel.FK__Name__TypeeID__21B6055D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
