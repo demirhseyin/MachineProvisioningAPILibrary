@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NameGeneratorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationSName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Name">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GeneratedName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SName" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="TypeeID" Type="int" />
+          <Property Name="PlatformID" Type="int" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="HostName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NightWatch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="Phone" Type="varchar" MaxLength="100" />
+          <Property Name="EMail" Type="varchar" MaxLength="100" />
+          <Property Name="isWatcher" Type="int" />
+        </EntityType>
+        <EntityType Name="Platformm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlatfromName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlatformSName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectSName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="QueryLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QueryDatabaseName" Type="varchar" MaxLength="50" />
+          <Property Name="QueryString" Type="varchar" MaxLength="500" />
+          <Property Name="QueryDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Rolee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleSName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SQLDeployment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hostname" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="255" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="SystemAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="11" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Typee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeSName" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Name__LocationID__1FCDBCEB">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__PlatformID__239E4DCF">
+          <End Role="Platformm" Type="Self.Platformm" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Platformm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="PlatformID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__ProjectID__22AA2996">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__RoleID__20C1E124">
+          <End Role="Rolee" Type="Self.Rolee" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__TypeeID__21B6055D">
+          <End Role="Typee" Type="Self.Typee" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="TypeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NameGeneratorModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Name" EntityType="Self.Name" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NightWatch" EntityType="Self.NightWatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Platformm" EntityType="Self.Platformm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QueryLog" EntityType="Self.QueryLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rolee" EntityType="Self.Rolee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SQLDeployment" EntityType="Self.SQLDeployment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemAdmin" EntityType="Self.SystemAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Typee" EntityType="Self.Typee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Name__LocationID__1FCDBCEB" Association="Self.FK__Name__LocationID__1FCDBCEB">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Name" EntitySet="Name" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__PlatformID__239E4DCF" Association="Self.FK__Name__PlatformID__239E4DCF">
+            <End Role="Platformm" EntitySet="Platformm" />
+            <End Role="Name" EntitySet="Name" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__ProjectID__22AA2996" Association="Self.FK__Name__ProjectID__22AA2996">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Name" EntitySet="Name" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__RoleID__20C1E124" Association="Self.FK__Name__RoleID__20C1E124">
+            <End Role="Rolee" EntitySet="Rolee" />
+            <End Role="Name" EntitySet="Name" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__TypeeID__21B6055D" Association="Self.FK__Name__TypeeID__21B6055D">
+            <End Role="Typee" EntitySet="Typee" />
+            <End Role="Name" EntitySet="Name" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NameGeneratorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationSName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Names" Relationship="Self.FK__Name__LocationID__1FCDBCEB" FromRole="Location" ToRole="Name" />
+        </EntityType>
+        <EntityType Name="Name">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GeneratedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="TypeeID" Type="Int32" />
+          <Property Name="PlatformID" Type="Int32" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="HostName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Location" Relationship="Self.FK__Name__LocationID__1FCDBCEB" FromRole="Name" ToRole="Location" />
+          <NavigationProperty Name="Platformm" Relationship="Self.FK__Name__PlatformID__239E4DCF" FromRole="Name" ToRole="Platformm" />
+          <NavigationProperty Name="Project" Relationship="Self.FK__Name__ProjectID__22AA2996" FromRole="Name" ToRole="Project" />
+          <NavigationProperty Name="Rolee" Relationship="Self.FK__Name__RoleID__20C1E124" FromRole="Name" ToRole="Rolee" />
+          <NavigationProperty Name="Typee" Relationship="Self.FK__Name__TypeeID__21B6055D" FromRole="Name" ToRole="Typee" />
+        </EntityType>
+        <EntityType Name="NightWatch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="isWatcher" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Platformm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlatfromName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlatformSName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Names" Relationship="Self.FK__Name__PlatformID__239E4DCF" FromRole="Platformm" ToRole="Name" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectSName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Names" Relationship="Self.FK__Name__ProjectID__22AA2996" FromRole="Project" ToRole="Name" />
+        </EntityType>
+        <EntityType Name="QueryLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QueryDatabaseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QueryString" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="QueryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Rolee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleSName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Names" Relationship="Self.FK__Name__RoleID__20C1E124" FromRole="Rolee" ToRole="Name" />
+        </EntityType>
+        <EntityType Name="SQLDeployment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hostname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SystemAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Typee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeSName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Names" Relationship="Self.FK__Name__TypeeID__21B6055D" FromRole="Typee" ToRole="Name" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Name__LocationID__1FCDBCEB">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="LocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__PlatformID__239E4DCF">
+          <End Role="Platformm" Type="Self.Platformm" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Platformm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="PlatformID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__ProjectID__22AA2996">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__RoleID__20C1E124">
+          <End Role="Rolee" Type="Self.Rolee" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rolee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Name__TypeeID__21B6055D">
+          <End Role="Typee" Type="Self.Typee" Multiplicity="0..1" />
+          <End Role="Name" Type="Self.Name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Name">
+              <PropertyRef Name="TypeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NameGeneratorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Locations" EntityType="Self.Location" />
+          <EntitySet Name="Names" EntityType="Self.Name" />
+          <EntitySet Name="NightWatches" EntityType="Self.NightWatch" />
+          <EntitySet Name="Platformms" EntityType="Self.Platformm" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="QueryLogs" EntityType="Self.QueryLog" />
+          <EntitySet Name="Rolees" EntityType="Self.Rolee" />
+          <EntitySet Name="SQLDeployments" EntityType="Self.SQLDeployment" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="SystemAdmins" EntityType="Self.SystemAdmin" />
+          <EntitySet Name="Typees" EntityType="Self.Typee" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Name__LocationID__1FCDBCEB" Association="Self.FK__Name__LocationID__1FCDBCEB">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Name" EntitySet="Names" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__PlatformID__239E4DCF" Association="Self.FK__Name__PlatformID__239E4DCF">
+            <End Role="Platformm" EntitySet="Platformms" />
+            <End Role="Name" EntitySet="Names" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__ProjectID__22AA2996" Association="Self.FK__Name__ProjectID__22AA2996">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Name" EntitySet="Names" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__RoleID__20C1E124" Association="Self.FK__Name__RoleID__20C1E124">
+            <End Role="Rolee" EntitySet="Rolees" />
+            <End Role="Name" EntitySet="Names" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Name__TypeeID__21B6055D" Association="Self.FK__Name__TypeeID__21B6055D">
+            <End Role="Typee" EntitySet="Typees" />
+            <End Role="Name" EntitySet="Names" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NameGeneratorModelStoreContainer" CdmEntityContainer="NameGeneratorEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="NameGeneratorModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationSName" ColumnName="LocationSName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Names">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Name">
+              <MappingFragment StoreEntitySet="Name">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GeneratedName" ColumnName="GeneratedName" />
+                <ScalarProperty Name="SName" ColumnName="SName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="TypeeID" ColumnName="TypeeID" />
+                <ScalarProperty Name="PlatformID" ColumnName="PlatformID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NightWatches">
+            <EntityTypeMapping TypeName="NameGeneratorModel.NightWatch">
+              <MappingFragment StoreEntitySet="NightWatch">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="isWatcher" ColumnName="isWatcher" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Platformms">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Platformm">
+              <MappingFragment StoreEntitySet="Platformm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlatfromName" ColumnName="PlatfromName" />
+                <ScalarProperty Name="PlatformSName" ColumnName="PlatformSName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectSName" ColumnName="ProjectSName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QueryLogs">
+            <EntityTypeMapping TypeName="NameGeneratorModel.QueryLog">
+              <MappingFragment StoreEntitySet="QueryLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="QueryDatabaseName" ColumnName="QueryDatabaseName" />
+                <ScalarProperty Name="QueryString" ColumnName="QueryString" />
+                <ScalarProperty Name="QueryDate" ColumnName="QueryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rolees">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Rolee">
+              <MappingFragment StoreEntitySet="Rolee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleSName" ColumnName="RoleSName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SQLDeployments">
+            <EntityTypeMapping TypeName="NameGeneratorModel.SQLDeployment">
+              <MappingFragment StoreEntitySet="SQLDeployment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Hostname" ColumnName="Hostname" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NameGeneratorModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemAdmins">
+            <EntityTypeMapping TypeName="NameGeneratorModel.SystemAdmin">
+              <MappingFragment StoreEntitySet="SystemAdmin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Typees">
+            <EntityTypeMapping TypeName="NameGeneratorModel.Typee">
+              <MappingFragment StoreEntitySet="Typee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="TypeSName" ColumnName="TypeSName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="NameGeneratorModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

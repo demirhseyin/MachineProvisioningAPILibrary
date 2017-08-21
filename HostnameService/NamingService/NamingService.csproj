@@ -80,6 +80,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -235,16 +236,74 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NameController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CreateModel.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Location.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Name.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NameGenerator.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NameGenerator.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NameGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NameGenerator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NameGenerator.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NameModel.cs" />
+    <Compile Include="Models\NightWatch.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Platformm.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QueryLog.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rolee.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SQLDeployment.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SystemAdmin.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Typee.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>NameGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Services\CreateHelper.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +313,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\NameGenerator.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NameGenerator.edmx</DependentUpon>
+      <LastGenOutput>NameGenerator.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NameGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NameGenerator.edmx</DependentUpon>
+      <LastGenOutput>NameGenerator.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -277,6 +346,13 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\NameGenerator.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NameGenerator.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NameGenerator.edmx.diagram">
+      <DependentUpon>NameGenerator.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -307,7 +383,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -316,6 +391,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
