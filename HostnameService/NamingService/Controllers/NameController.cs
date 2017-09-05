@@ -30,7 +30,7 @@ namespace NamingService.Controllers
             entity.LocationID = model.LocationID;
             entity.RoleID = model.RoleID;
             entity.PlatformID = model.PlatformID;
-            entity.TypeeID = model.TypeeID;
+            entity.TypeeID = model.TypeeID; 
             entity.Comment = model.Comment;
 
 
@@ -45,6 +45,8 @@ namespace NamingService.Controllers
             entity.Platformm = PlatformName;
             Typee typeName = db.Typees.Where(t => t.ID == model.TypeeID).SingleOrDefault();
             entity.Typee = typeName;
+
+            //DENEME
 
             //Set The Correct Number and DateTime for Entity2Save
             entity.Number = SerialNumber.IncreaseNumber(entity);
