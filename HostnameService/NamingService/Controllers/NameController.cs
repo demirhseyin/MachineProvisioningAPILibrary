@@ -48,6 +48,8 @@ namespace NamingService.Controllers
 
             //DENEME
 
+            //DENDEME2
+
             //Set The Correct Number and DateTime for Entity2Save
             entity.Number = SerialNumber.IncreaseNumber(entity);
             entity.CreateDate = DateTime.Now;
